@@ -1,0 +1,112 @@
+﻿/*@import url(http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css);*/
+@import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+
+*
+{
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+body
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: "Open Sans", arial;
+    background: lavender;
+    color: black;
+}
+
+a.box
+{
+    text-decoration: none;
+    color: black;
+
+    position: relative;
+    overflow: hidden;
+}
+
+    a.box h2
+    {
+        position: absolute;
+        bottom: 0px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+        a.box h2.top
+        {
+            position: static;
+            font-size: 14px;
+        }
+
+    a.box i
+    {
+        font-size: 60px;
+        text-align: center;
+        display: block;
+        margin-top: 10px; /* outside Codepen is actually 30px */
+    }
+
+
+    a.box:active
+    {
+        -webkit-transform: scale(1.02);
+    }
+
+.box
+{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    font-size: 13px;
+    padding: 25px;
+    display: block;
+    margin: 5px;
+}
+
+.icon {
+    height: 100px;
+    padding-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lime
+{
+    background: #61b812;
+}
+
+.orange
+{
+    background: #e76022;
+}
+
+.blue
+{
+    background: #1E90FF;
+}
+
+.redgay
+{
+    background: #DA312E;
+}
+
+.yellow
+{
+    background: #dbb701;
+}
+
+.bluefish
+{
+    background: #02b9e3;
+}
+
+.magenta
+{
+    background: #d22a4e;
+}

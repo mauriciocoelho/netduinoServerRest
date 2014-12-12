@@ -1,0 +1,18 @@
+﻿body
+{
+    background: rgb(70, 72, 75);
+}
+
+.light-bulb2
+{
+    width: 150px;
+    height: 150px;
+    background: url(https://lh4.googleusercontent.com/-katLGTSCm2Q/UJC0_N7XCrI/AAAAAAAABq0/6GxNfNW-Ra4/s300/lightbulb.png) no-repeat 0 0;
+}
+
+.light-bulb
+{
+    width: 150px;
+    height: 150px;
+    background: url(https://lh4.googleusercontent.com/-katLGTSCm2Q/UJC0_N7XCrI/AAAAAAAABq0/6GxNfNW-Ra4/s300/lightbulb.png) no-repeat -150px 0;
+}

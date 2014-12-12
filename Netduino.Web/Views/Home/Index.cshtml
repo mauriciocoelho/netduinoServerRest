@@ -1,0 +1,120 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>nDomus</title>
+
+    <link href="~/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="~/bootstrap/css/bootstrap-overrides.css" rel="stylesheet" />
+    <link href="~/Styles/MetroButtons.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        function doRequest(led) {
+
+            var item = $('#' + 'check' + led);
+            var status = $(item).hasClass('lime');
+
+            $.ajax({
+                type: "POST",
+                url: ("http://172.31.251.178:8080/api/pin"),
+                data: JSON.stringify({ Pin: led, Status: !status }),
+                dataType: 'json',
+                async: true,
+            });
+            switchTo(status, item);
+        }
+
+        function switchTo(status, item) {
+            if (!status)
+                $(item).removeClass("redgay").addClass("lime");
+            else
+                $(item).removeClass("lime").addClass("redgay");
+        }
+
+        function pulseAll() {            
+            for (var i = 0; i < 10; i++) {
+                doRequest(i.toString());
+            }
+        }        
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
+                <a href="javascript:pulseAll()" class='box bluefish'>
+                    <i class="icon-lightbulb"></i>
+                    <h2>Todos</h2>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <a href="javascript:doRequest('0')" class='box redgay' id="check0">
+                    <i class="icon-lightbulb"></i>
+                    <h2>Gerência 02</h2>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <a href="javascript:doRequest('1', true)" class='box redgay' id="check1">
+                    <i class="icon-lightbulb"></i>
+                    <h2>Impressão</h2>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <a href="javascript:doRequest('2', true)" class='box redgay' id="check2">
+                    <i class="icon-lightbulb"></i>
+                    <h2>Recepção</h2>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <a href="javascript:doRequest('3', true)" class='box redgay' id="check3">
+                    <i class="icon-lightbulb"></i>
+                    <h2>Gerência 01</h2>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <a href="javascript:doRequest('4', true)" class='box redgay' id="check4">
+                    <i class="icon-lightbulb"></i>
+                    <h2>Sala de Reuniões</h2>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <a href="javascript:doRequest('5', true)" class='box redgay' id="check5">
+                    <i class="icon-lightbulb"></i>
+                    <h2>Circulação</h2>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <a href="javascript:doRequest('6', true)" class='box redgay' id="check6">
+                    <i class="icon-lightbulb"></i>
+                    <h2>Adm/Financeiro</h2>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <a href="javascript:doRequest('7', true)" class='box redgay' id="check7">
+                    <i class="icon-lightbulb"></i>
+                    <h2>Produção 01</h2>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <a href="javascript:doRequest('8', true)" class='box redgay' id="check8">
+                    <i class="icon-lightbulb"></i>
+                    <h2>Produção 02</h2>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+                <a href="javascript:doRequest('9', true)" class='box redgay' id="check9">
+                    <i class="icon-lightbulb"></i>
+                    <h2>Produção 03</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
